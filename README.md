@@ -27,7 +27,7 @@ sudo service docker start
 Abra o terminal de comandos e execute o comando abaixo:
 
 ```zsh
-docker run -d -p 8080:8080 rlghisleni/conversao-temperatura:latest
+docker run -d -p 8080:8080 --name=conversao-temperatura rlghisleni/conversao-temperatura:latest
 ```
 
 Liste os containers em execução e verifique se _**rlghisleni/conversao-temperatura**_ consta na relação.
