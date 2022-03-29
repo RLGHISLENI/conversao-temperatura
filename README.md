@@ -100,3 +100,9 @@ Envie também a imagem **latest** atualizada
 ```zsh
 docker push rlghisleni/conversao-temperatura:latest
 ```
+
+## Bônus 01 - Executando containers com Azure App Service
+
+- [Repositório no Docker Hub contendo a imagem do Projeto](https://hub.docker.com/r/rlghisleni/conversao-temperatura/)
+
+- [Projeto executando no Azure App Service](https://iniciativa-kubernetes-web.azurewebsites.net/)
