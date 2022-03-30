@@ -106,3 +106,46 @@ docker push rlghisleni/conversao-temperatura:latest
 - [Repositório no Docker Hub contendo a imagem do Projeto](https://hub.docker.com/r/rlghisleni/conversao-temperatura/)
 
 - [Projeto executando no Azure App Service](https://iniciativa-kubernetes-web.azurewebsites.net/)
+
+## **Informações Importantes**
+
+### **Benefícios no uso de containers**
+  
+Um dos objetivos é facilitar o desenvolvimento, acelerar a implantação e a execução de aplicações em _**ambientes isolados**_.
+
+Com o uso de containers podemos ter portabilidade, agilidade, escalabilidade, controle e isolamento em todo o fluxo entre o Desenvolvimento e Operações.
+
+A utilização de containers torna possível redução de custos e permite que tenhamos o mesmo ambiente de produção rodando em nossa máquina de desenvolvimento, além de permitir que tenhamos _**diversos ambientes de programação diferentes na mesma máquina**_ sem conflito entre eles.
+
+Com os containers temos uma _**redução no uso de VMs**_ e consequentemente uma redução no uso de memória pois uma aplicação rodando em container será bem mais leve que uma aplicação rodando em uma VM completa, porque o container não depende de um sistema operacional completo e sim do mínimo necessário para executar a aplicação.
+
+Outra vantagem é a possibilidade _**guardar uma imagem**_ completa do ambiente e disponibilizar através de um Servidor Restry para toda equipe, além de ser possível gerar uma imagem do ambiente com a aplicação configurada e pronta para ser executada.
+
+O uso de containers facilita muito a adoção de processos de _**automação via deploy**_ (CI/CD).
+
+### **Qual a diferença entre máquinas virtuais e containers e quais são as vantagens da containerização?**
+
+Os containers são bem mais leves que as VMs que são máquinas completas e podem ser personalizados com o mínimo necessário para sua execução, possibilitando assim um melhor escalonamento e _**diminuindo custos desnecessários**_ com infraestrutura. 
+
+O tempo de inicialização de um container é bem mais rápido que o de uma VM e isso pode fazer toda diferença na execução da aplicação em produção, principalmente falando em utilização de micro serviços.
+
+### **Boas práticas ns construção de imagens**
+
+Utilizar o padrão de nomenclatura utilizando namespace na criação de imagens, adicionar a versão no nome e criar sempre uma imagem latest para manter a última versão atualizada.
+
+_**Sempre utilizar imagens oficiais**_ como base para nossas imagens.
+Sempre especificar a versão na tag da imagem para evitar problemas de atualização.
+
+Não utilizar mais de um processo para cada imagem docker, a menos que seja necessário.
+
+Utilizar as camadas na construção do arquivo Dockerfile para evitar processamento desnecessário.
+
+Sempre _**utilizar o arquivo .dockerignore**_ para não considerar arquivos ou pastas na construção da imagem.
+
+Utilizar sempre o _**COPY ao invés do ADD**_, a menos que seja necessário.
+
+Atenção ao utilizar os comandos ENTRYPOINT e CMD, caso necessário poderá ser utilizados os dois em conjunto.
+
+Utilizar imagens_** multistage build para linguagens de programação compiladas**_ e/ou JIT reduzindo o tamanho final da imagem.
+
+Sempre armazenar as imagens e suas versões em um servidor Registry.
