@@ -146,6 +146,6 @@ Utilizar sempre o _**COPY ao invés do ADD**_, a menos que seja necessário.
 
 Atenção ao utilizar os comandos ENTRYPOINT e CMD, caso necessário poderá ser utilizados os dois em conjunto.
 
-Utilizar imagens_** multistage build para linguagens de programação compiladas**_ e/ou JIT reduzindo o tamanho final da imagem.
+Utilizar imagens _**multistage build para linguagens de programação compiladas**_ e/ou JIT reduzindo o tamanho final da imagem.
 
 Sempre armazenar as imagens e suas versões em um servidor Registry.
