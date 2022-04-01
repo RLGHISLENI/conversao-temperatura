@@ -101,6 +101,27 @@ Envie também a imagem **latest** atualizada
 docker push rlghisleni/conversao-temperatura:latest
 ```
 
+## Como rodar o projeto no Kubernetes
+
+Primeiro certifique-se de ter os [pré requisitos](https://github.com/RLGHISLENI/rotten-potatoes) instalados e configurados em sua máquina.
+
+Utilizando k3d crie um cluster kubernetes conforme o código abaixo:
+
+```zsh
+k3d cluster create meucluster --agents 1 --servers 1 -p "8080:30000@loadbalancer"
+```
+
+Navegue até a pasta `k8s` do projeto e usando o `kubectl` execute o manifesto de deployment
+
+```zsh
+kubectl apply -f deployment.yaml
+```
+
+Pronto, sua aplicação está no ar utilizando todo o poder dos containers docker e sendo orquestrada pelo kubernetes.
+
+Abra o navegador de sua preferência na url _**http://localhost:8080/**_ e o projeto será apresentado.
+
+
 ## Bônus 01 - Executando containers com Azure App Service
 
 - [Repositório no Docker Hub contendo a imagem do Projeto](https://hub.docker.com/r/rlghisleni/conversao-temperatura/)
