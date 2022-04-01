@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: web
-          image: rlghisleni/conversao-temperatura:v2
+          image: rlghisleni/conversao-temperatura:v1
           ports:
             - containerPort: 80
 ---
