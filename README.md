@@ -7,6 +7,13 @@
 - VSCode
 - Docker
 - Git
+- ASDF
+- kubectl
+- k3d
+
+## Instalação de pré requisitos
+
+Primeiro certifique-se de ter os [pré requisitos](https://github.com/RLGHISLENI/rotten-potatoes) instalados e configurados em sua máquina.
 
 ## Iniciar o Docker na estação
 
@@ -102,8 +109,6 @@ docker push rlghisleni/conversao-temperatura:latest
 ```
 
 ## Como rodar o projeto no Kubernetes
-
-Primeiro certifique-se de ter os [pré requisitos](https://github.com/RLGHISLENI/rotten-potatoes) instalados e configurados em sua máquina.
 
 Utilizando k3d crie um cluster kubernetes conforme o código abaixo:
 
