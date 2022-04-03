@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: deployment-conversao
+  name: deployconversao
 spec:
   replicas: 5
   selector:
     matchLabels:
-      app: web-conversao
+      app: webconversao
   template:
     metadata:
       labels:
-        app: web-conversao
+        app: webconversao
     spec:
       containers:
-        - name: web-conversao
+        - name: webconversao
           image: rlghisleni/conversao-temperatura:v1
           ports:
             - containerPort: 8080
@@ -21,12 +21,13 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: web-conversao
+  name: webconversao
 spec:
   selector:
-    app: web-conversao
+    app: webconversao
   ports:
     - port: 80
       targetPort: 8080
-      nodePort: 30000
+      # nodePort: 30000
   type: LoadBalancer
+  # type: NodePort
