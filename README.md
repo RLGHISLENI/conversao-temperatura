@@ -9,6 +9,7 @@
 - Git
 - ASDF
 - kubectl
+- [kubectx](https://github.com/ahmetb/kubectx)
 - k3d
 
 ## Instalação de pré requisitos
@@ -175,3 +176,8 @@ Atenção ao utilizar os comandos ENTRYPOINT e CMD, caso necessário poderá ser
 Utilizar imagens _**multistage build para linguagens de programação compiladas**_ e/ou JIT reduzindo o tamanho final da imagem.
 
 Sempre armazenar as imagens e suas versões em um servidor Registry.
+
+## Referências
+
+- [Exemplos básicos de pod, replicaset e deployment](https://github.com/RLGHISLENI/iniciativa-kubernetes-manifest)
+- [Desafio 02 e 03 - Kubernetes e Pipeline CI/CD](https://github.com/RLGHISLENI/rotten-potatoes)
