@@ -26,7 +26,7 @@ Abra o terminal na pasta raiz do seu usuário e clone o repositório do asdf
 git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.9.0
 ```
 
-Abra e edite o arquivo `.bashrc` como permissão de administrador utilizando o editor `nano`
+Abra e edite o arquivo `.bashrc` com permissão de administrador utilizando o editor `nano`
 
 ```zsh
 sudo nano ~/.bashrc
@@ -76,7 +76,7 @@ asdf global kubectl 1.23.5
 asdf global kubectx 0.9.4
 ```
 
-Veja o resultado executando o comando que demosntra as versões instaladas e definidas pelo asdf em seu sistema operacional.
+Veja o resultado executando o comando que demosntra as versões instaladas e definidas pelo `asdf` em seu sistema operacional.
 
 ```zsh
 # Lista qual a versão definida para cada ferramenta
@@ -191,13 +191,13 @@ docker images
 
 ## Como atualizar a imagem no Registry DockerHub
 
-Realize o login na conta do DockerHub, informando o usuário e senha para se autenticar a plataforma.
+Realize o login na conta do DockerHub, informando o usuário e senha para se autenticar na plataforma.
 
 ```zsh
 docker login
 ```
 
-Envie a nova versão da imagem alterada para o servidor Registry
+Envie a nova versão da imagem alterada para o Service Registry
 
 ```zsh
 docker push rlghisleni/conversao-temperatura:v[n]
@@ -244,9 +244,9 @@ Com o uso de containers podemos ter portabilidade, agilidade, escalabilidade, co
 
 A utilização de containers torna possível redução de custos e permite que tenhamos o mesmo ambiente de produção rodando em nossa máquina de desenvolvimento, além de permitir que tenhamos _**diversos ambientes de programação diferentes na mesma máquina**_ sem conflito entre eles.
 
-Com os containers temos uma _**redução no uso de VMs**_ e consequentemente uma redução no uso de memória pois uma aplicação rodando em container será bem mais leve que uma aplicação rodando em uma VM completa, porque o container não depende de um sistema operacional completo e sim do mínimo necessário para executar a aplicação.
+Com os containers temos uma _**redução no uso de VMs**_ e consequentemente uma redução no uso de memória, pois uma aplicação rodando em container será bem mais leve que uma aplicação rodando em uma VM completa, visto que o container não depende de um sistema operacional completo mas sim do mínimo necessário para executar a aplicação.
 
-Outra vantagem é a possibilidade _**guardar uma imagem**_ completa do ambiente e disponibilizar através de um Servidor Restry para toda equipe, além de ser possível gerar uma imagem do ambiente com a aplicação configurada e pronta para ser executada.
+Outra vantagem é a possibilidade _**guardar uma imagem**_ completa do ambiente e disponibilizar através de um Service Restry para toda equipe, além de ser possível gerar uma imagem do ambiente com a aplicação configurada e pronta para ser executada.
 
 O uso de containers facilita muito a adoção de processos de _**automação via deploy**_ (CI/CD).
 
@@ -256,9 +256,9 @@ Os containers são bem mais leves que as VMs que são máquinas completas e pode
 
 O tempo de inicialização de um container é bem mais rápido que o de uma VM e isso pode fazer toda diferença na execução da aplicação em produção, principalmente falando em utilização de micro serviços.
 
-### **Boas práticas ns construção de imagens**
+### **Boas práticas na construção de imagens**
 
-Utilizar o padrão de nomenclatura utilizando namespace na criação de imagens, adicionar a versão no nome e criar sempre uma imagem latest para manter a última versão atualizada.
+Preferir o padrão de nomenclatura utilizando namespace na criação de imagens, adicionar a versão no nome e criar sempre uma imagem latest para manter a última versão atualizada.
 
 _**Sempre utilizar imagens oficiais**_ como base para nossas imagens.
 Sempre especificar a versão na tag da imagem para evitar problemas de atualização.
@@ -271,11 +271,11 @@ Sempre _**utilizar o arquivo .dockerignore**_ para não considerar arquivos ou p
 
 Utilizar sempre o _**COPY ao invés do ADD**_, a menos que seja necessário.
 
-Atenção ao utilizar os comandos ENTRYPOINT e CMD, caso necessário poderá ser utilizados os dois em conjunto.
+Atenção ao utilizar os comandos ENTRYPOINT e CMD, caso necessário poderão ser utilizados os dois em conjunto.
 
 Utilizar imagens _**multistage build para linguagens de programação compiladas**_ e/ou JIT reduzindo o tamanho final da imagem.
 
-Sempre armazenar as imagens e suas versões em um servidor Registry.
+Sempre armazenar as imagens e suas versões em um Service Registry.
 
 ## Referências
 
